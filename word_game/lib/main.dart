@@ -12,18 +12,8 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Word GAME',
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Word Game'),
-        ),
-        body: Center(
-          child: RandomSentences(),
-          ),
-        ),
+      //theme: ThemeData(primarySwatch: Colors.blue,),
+      home: RandomSentences(),
     
     );
   }
@@ -46,7 +36,7 @@ class _RandomSentencesState extends State<RandomSentences>{
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('H Game'),
+        title: Text('Word Game'),
       ),
       body: _buildSentences(),
     );
@@ -63,7 +53,7 @@ String   _getSentence(){
 }
 
 Widget _buildRow(String sentence){
-    final alreadyFoundFunny =_funnies.contains(sentence)
+    final alreadyFoundFunny =_funnies.contains(sentence);
     return ListTile(
       title: Text(
         sentence,
@@ -76,7 +66,10 @@ Widget _buildRow(String sentence){
       onTap: () {
         setState(() {
           if(alreadyFoundFunny){
-            
+            _funnies.remove(sentence);
+          }
+          else {
+            _funnies.add(sentence);
           }
         });
       },
