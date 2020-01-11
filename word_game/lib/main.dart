@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
     final adjective = WordAdjective.random();
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Word GAME',
       //theme: ThemeData(primarySwatch: Colors.blue,),
       home: RandomSentences(),
@@ -37,6 +38,10 @@ class _RandomSentencesState extends State<RandomSentences>{
     return Scaffold(
       appBar: AppBar(
         title: Text('Word Game'),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.list),
+              onPressed: _pushFannies)
+        ],
       ),
       body: _buildSentences(),
     );
@@ -50,6 +55,35 @@ String   _getSentence(){
       ' and Denys dreams about '
       ' his ${noun.asCapitalized}'
   );
+}
+
+void _pushFannies(){
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context){
+        final tiles = _funnies.map(
+            (sentence) {
+              return ListTile(
+                title: Text(
+                  sentence,
+                  style: _biggerFont,
+                ),
+              );
+            },
+        );
+        final divided = ListTile.divideTiles(
+            tiles: tiles,
+            context: context,
+        ).toList();
+
+        return Scaffold(
+          appBar: AppBar(
+            title: Text('Saved Funny Sentences'),
+          ),
+          body: ListView(children: divided,),
+        );
+      },
+      ),
+    );
 }
 
 Widget _buildRow(String sentence){
