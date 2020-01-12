@@ -1,5 +1,5 @@
 import 'dart:convert';
-import '../models/cat.dart';
+import 'package:cat_box/models/cat.dart';
 
 class CatApi {
   static List<Cat> allCatsFromJson(String jsonData) {

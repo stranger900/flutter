@@ -9,6 +9,7 @@ class CatBoxApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: new ThemeData(
         primarySwatch: Colors.blue,
         accentColor: Colors.pinkAccent,

@@ -2,6 +2,8 @@ import 'dart:async';
 
 import '../models/cat.dart';
 import '../services/api.dart';
+import './cat_details/details_page.dart';
+import '../utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class CatList extends StatefulWidget {
@@ -35,7 +37,7 @@ class _CatListState extends State<CatList> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             new ListTile(
-              //onTap: //TODO
+              onTap: () => _navigateToCatDetails(cat, index),
               leading: new Hero(
                 tag: index,
                 child: new CircleAvatar(
@@ -52,6 +54,17 @@ class _CatListState extends State<CatList> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  _navigateToCatDetails(Cat cat, Object avatarTag) {
+    Navigator.of(context).push(
+      new FadePageRoute(
+        builder: (c) {
+          return new CatDetailsPage(cat, avatarTag: avatarTag);
+        },
+        settings: new RouteSettings(),
       ),
     );
   }
