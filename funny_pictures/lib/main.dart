@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import './refresh.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,10 +8,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('Funny pictures'),
           backgroundColor: Colors.deepOrange[400],
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.refresh),
+              tooltip: 'Refresh',
+              onPressed:
+              setState(() {});,
+            )
+          ],
         ),
         backgroundColor: Colors.deepOrangeAccent[100],
         body: Image(image: NetworkImage('http://junglebiscuit.com/images/random/rand_image.pl')),
@@ -19,3 +28,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

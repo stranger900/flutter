@@ -3,27 +3,21 @@ import 'package:http/http.dart' as http;
 
 class RefreshApp extends StatefulWidget {
   @override
-  _RefreshAppState createState() => _RefreshAppState();
+  RefreshAppState createState() => RefreshAppState();
 }
 
-class _RefreshAppState extends State<RefreshApp> {
-
-  _refreshAction() {
+class RefreshAppState extends State<RefreshApp> {
+  var response;
+  refreshAction() {
     setState(() {
-      var response = http.read('http://junglebiscuit.com/images/random/rand_image.pl');
+      Widget MyWidget(){
+        Image(image: NetworkImage('http://junglebiscuit.com/images/random/rand_image.pl'));
+      }
+      //var response = http.read('http://junglebiscuit.com/images/random/rand_image.pl');
     });
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        floatingActionButton: Container(
-          child: FloatingActionButton(
-              tooltip: 'Refresh',
-              child: Icon(Icons.refresh),
-              onPressed: () => _refreshAction()
-          ),
-        ),
-
-      );
+    return refreshAction();
     }
 }
