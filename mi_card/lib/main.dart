@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.teal,
         body: SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 CircleAvatar(
                   backgroundImage: AssetImage('images/photo.png'),
@@ -34,55 +35,45 @@ class MyApp extends StatelessWidget {
                     letterSpacing: 2.5,
                   ),
                 ),
-                Container(
+                Card(
                   color: Colors.white,
                   margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  padding: EdgeInsets.all(10),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                          Icons.phone,
-                        color: Colors.teal[900],
-                        size: 50,
+                  //padding: EdgeInsets.all(10),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.phone,
+                      color: Colors.teal[900],
+                      size: 50,
+                    ),
+                    title: Text(
+                      '+38 099 123 4567',
+                      style: TextStyle(
+                          fontFamily: 'SourceSansPro',
+                          fontSize: 20.0,
+                          color: Colors.teal[900]
                       ),
-                      SizedBox(
-                        width: 50,
-                      ),
-                      Text(
-                          '+38 099 123 4567',
-                          style: TextStyle(
-                            fontFamily: 'SourceSansPro',
-                            fontSize: 20.0,
-                            color: Colors.teal[900]
-                          ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-                Container(
+                Card(
                   color: Colors.white,
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                  padding: EdgeInsets.all(10),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(Icons.mail,
+                  //padding: EdgeInsets.all(10),
+                  child: ListTile(
+                    leading: Icon(Icons.mail,
                       color: Colors.teal[900],
                       size: 50,
 
-                      ),
-                      SizedBox(
-                        width: 50,
-                      ),
-                      Text(
-                        'a900@i.ua',
-                        style: TextStyle(
-                          color: Colors.teal[900],
-                          fontSize: 20,
-                          fontFamily: 'SourceSansPro',
+                    ),
+                    title: Text(
+                      'a900@i.ua',
+                      style: TextStyle(
+                        color: Colors.teal[900],
+                        fontSize: 20,
+                        fontFamily: 'SourceSansPro',
 
-                        ),
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ],
