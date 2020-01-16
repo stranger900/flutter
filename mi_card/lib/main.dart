@@ -7,15 +7,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: SafeArea(
+
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+
+                Colors.teal[300],
+                //Colors.teal[400],
+                //Colors.teal[500],
+                Colors.teal[600],
+                //Colors.teal[700],
+                //Colors.teal[800],
+                Colors.teal[900],
+
+              ]
+            ),
+          ),
             child: Column(
+
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 CircleAvatar(
                   backgroundImage: AssetImage('images/photo.png'),
-                  radius: 50,
+                  radius: 60,
                 ),
                 Text(
                   'Андрій',
@@ -48,9 +67,9 @@ class MyApp extends StatelessWidget {
                   //padding: EdgeInsets.all(10),
                   child: ListTile(
                     leading: Icon(
-                      Icons.phone,
+                      Icons.smartphone,
                       color: Colors.teal[900],
-                      size: 50,
+                      size: 30,
                     ),
                     title: Text(
                       '+38 099 123 4567',
@@ -69,7 +88,7 @@ class MyApp extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(Icons.mail,
                       color: Colors.teal[900],
-                      size: 50,
+                      size: 30,
 
                     ),
                     title: Text(

@@ -30,17 +30,20 @@ class RefreshPicture extends StatefulWidget {
 
 class _RefreshPictureState extends State<RefreshPicture> {
 
-  void getPicture() {
-    Image(image: NetworkImage('http://junglebiscuit.com/images/random/rand_image.pl'));
+  String url = 'http://junglebiscuit.com/images/random/rand_image.pl';
+  Future<http.Response> fetchPost() {
+    return http.get(url);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
+      padding: EdgeInsets.all(10),
       child: FlatButton(
           onPressed: () {
             setState(() {
-              getPicture();
+              fetchPost();
+              print(url);
             });
           },
           child: Image(image: NetworkImage('http://junglebiscuit.com/images/random/rand_image.pl')),
