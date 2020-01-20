@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'question.dart';
+import 'quiz_brain.dart';
+
+QuizBrain quizBrain = QuizBrain();
 
 void main() => runApp(Quizzler());
 
@@ -38,14 +40,6 @@ class _QuizPageState extends State<QuizPage> {
   ];
   List<bool> answers = [false, true, true];*/
 
-  List<Question> questionBank = [
-    Question(question:'You can lead a cow down stairs but not up stairs.', answer: false,),
-    Question(question:'Approximately one quarter of human bones are in the feet.', answer: true,),
-    Question(question:'A slug\'s blood is green.', answer: true,),
-  ];
-
-  int indexQuestions = 0;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -58,7 +52,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questionBank[indexQuestions].question,
+                quizBrain.getQuestionText(indexQuestions),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -82,10 +76,10 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = questionBank[indexQuestions].answer;
+                bool correctAnswer = quizBrain.getQuestionAnswer(indexQuestions);
                 setState(() {
                   scoreKeeper.add(Icon(Icons.check, color: Colors.green,));
-                  indexQuestions++;
+                  QuizBrain;
                 });
                 //The user picked true.
               },
