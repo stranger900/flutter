@@ -47,4 +47,15 @@ class QuizBrain {
     return _questionBank[_indexQuestions].answer;
   }
 
+  bool isFinished(){
+    if (_indexQuestions >= _questionBank.length - 1){
+      return true;
+    }else {
+      return false;
+    }
+  }
+  void reset(){
+    _indexQuestions = 0;
+  }
+
 }

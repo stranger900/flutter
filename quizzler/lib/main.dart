@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'quiz_brain.dart';
 
 QuizBrain quizBrain = QuizBrain();
@@ -33,12 +34,27 @@ class _QuizPageState extends State<QuizPage> {
 
   List<Icon> scoreKeeper = [];
 
-  /*List<String> questions = [
-    'You can lead a cow down stairs but not up stairs.',
-    'Approximately one quarter of human bones are in the feet.',
-    'A slug\'s blood is green.'
-  ];
-  List<bool> answers = [false, true, true];*/
+  void checkAnswer(bool userPickedAnswer){
+    bool correctAnswer = quizBrain.getQuestionAnswer();
+
+    setState(() {
+      if(quizBrain.isFinished()){
+        Alert(
+            context: context,
+            title: 'FINISHED',
+            desc: 'You\'ve reached the end of the quiz.'
+          ,).show();
+        quizBrain.reset();
+        scoreKeeper = [];
+      }else if(userPickedAnswer == correctAnswer){
+        scoreKeeper.add(Icon(Icons.check, color: Colors.green,));
+      }else{
+        scoreKeeper.add(Icon(Icons.close, color: Colors.red,));
+      }
+
+      quizBrain.nextQuestion();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,12 +92,8 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = quizBrain.getQuestionAnswer();
-                setState(() {
-                  scoreKeeper.add(Icon(Icons.check, color: Colors.green,));
-                  quizBrain.nextQuestion();
-                });
                 //The user picked true.
+                checkAnswer(true);
               },
             ),
           ),
@@ -99,11 +111,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                setState(() {
-                  scoreKeeper.add(Icon(Icons.close, color: Colors.red,));
-                  quizBrain.nextQuestion();
-                });
-
+                checkAnswer(false);
               },
             ),
           ),
