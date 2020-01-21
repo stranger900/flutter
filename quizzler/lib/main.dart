@@ -52,7 +52,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizBrain.getQuestionText(indexQuestions),
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -76,10 +76,10 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = quizBrain.getQuestionAnswer(indexQuestions);
+                bool correctAnswer = quizBrain.getQuestionAnswer();
                 setState(() {
                   scoreKeeper.add(Icon(Icons.check, color: Colors.green,));
-                  QuizBrain;
+                  quizBrain.nextQuestion();
                 });
                 //The user picked true.
               },
@@ -101,7 +101,7 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 setState(() {
                   scoreKeeper.add(Icon(Icons.close, color: Colors.red,));
-                  indexQuestions++;
+                  quizBrain.nextQuestion();
                 });
 
               },
