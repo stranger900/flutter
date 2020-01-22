@@ -1,7 +1,16 @@
-# Piano Tiles clone
+# piano_tiles
 
-![gif](https://raw.githubusercontent.com/MarcinusX/piano_tiles/master/screenshot.gif)
+A new Flutter application.
 
-A simple clone app of [Piano Tiles 2](https://play.google.com/store/apps/details?id=com.cmplay.tiles2&hl=en) game.
+## Getting Started
 
-Whole development process with described thought process can be found in this [blog post](https://marcinszalek.pl/flutter/piano-tiles/).
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

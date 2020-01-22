@@ -8,7 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  audioplayers: ^0.13.5
+  audioplayers: ^0.8.0
 
 dev_dependencies:
   flutter_test:
