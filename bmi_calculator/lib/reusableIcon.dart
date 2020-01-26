@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'constants.dart';
+
 
 class ReusableIcon extends StatelessWidget {
 
@@ -13,7 +14,7 @@ class ReusableIcon extends StatelessWidget {
     return Column(children: <Widget>[
       Icon(icon, size: 80,color: Colors.white),
       SizedBox(height: 15.0,),
-      Text(label,style: TextStyle(fontSize: 18.0, color: Color(0xff8d8e98)),)
+      Text(label,style: kLabelTextStyle,)
     ],mainAxisAlignment: MainAxisAlignment.center,
     );
   }
