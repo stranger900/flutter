@@ -5,7 +5,7 @@ class Location  {
   double latitude;
   double longitude;
 
-  void getCurrentLocation() async{
+  Future getCurrentLocation() async{
     try{
       Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
 
