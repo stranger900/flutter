@@ -64,4 +64,28 @@ Map<int, String> description = {
 
 };
 
-var m = date;
+class Brain{
+  String dat = date.toString();
+  int firstWorkNumber;
+  double secondWorkNumber;
+  int thitrdWorkNumber;
+
+  void days(){
+    int sDay9 = int.parse(dat[9]); //15 => 5
+    int sDay8 = int.parse(dat[8]); //15 => 1
+
+    int sMonth6 = int.parse(dat[6]); //07 => 7
+    int sMonth5 = int.parse(dat[5]); //07 => 0
+
+    int sYear3 = int.parse(dat[3]); //2019 => 9
+    int sYear2 = int.parse(dat[2]); //2019 => 1
+    int sYear1 = int.parse(dat[1]); //2019 => 0
+    int sYear0 = int.parse(dat[0]); //2019 => 2
+
+    firstWorkNumber = sYear0 + sYear1 + sYear2 + sYear3 + sMonth5 + sMonth6 + sDay8 + sDay9;
+    secondWorkNumber = (firstWorkNumber.toDouble())%10 + firstWorkNumber.toDouble()/10;
+    
+  }
+
+
+}

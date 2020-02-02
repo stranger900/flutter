@@ -95,7 +95,9 @@ class _PythagoreanSquareState extends State<PythagoreanSquare> {
                               setState(() {
                                 date = myDate;
                               });
+
                               print(date);
+
                               print(DateFormat.yMMMMd().format(date));
                               },
                           ),
