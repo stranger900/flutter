@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pythagorean_square/constants.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:pythagorean_square/constants.dart';
 import 'package:pythagorean_square/description.dart';
 
 void main() => runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      
+
       theme: ThemeData.dark(
       ),
       home: PythagoreanSquare(),
@@ -26,18 +27,28 @@ class PythagoreanSquare extends StatefulWidget {
 
 class _PythagoreanSquareState extends State<PythagoreanSquare> {
 
-  String date;
 
+
+  DateTime getDate(){
+    return date;
+  }
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
-      appBar: AppBar(title: Text('Pythagorean Square'),),
+      appBar: AppBar(title: Text('Квадрат Піфагора'),),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Expanded(flex: 1,child: Center(child: Text('Введіть свою дату народження:'))),
-          SizedBox(height: 20,),
+          Expanded(
+            flex: 3,
+            child: Image.asset('image.jpg',
+              width: double.maxFinite,
+            ),
+          ),
+
           /*
               DropdownButton(
                 focusColor: Color(0xff0BCD05),
@@ -58,15 +69,14 @@ class _PythagoreanSquareState extends State<PythagoreanSquare> {
               ),*/
               //MaterialButton(
                Expanded(
-                 flex: 1,
                  child: Container(
-                   height: 60,
+                   height: 80,
                    width: double.infinity,
                    child: FlatButton(
-                     color: Colors.red,
+                     color: Colors.teal,
                     child: Text(
                       "Введіть дату народження",
-                      style: TextStyle(color: Colors.white),
+                      style: textStyle,
                     ),
 
                     onPressed: () {
@@ -77,16 +87,16 @@ class _PythagoreanSquareState extends State<PythagoreanSquare> {
 
                           height: MediaQuery.of(context).copyWith().size.height / 3,
                           child: CupertinoDatePicker(
-
+                            initialDateTime: date,
                             mode: CupertinoDatePickerMode.date,
                             minimumYear: 1900,
                             maximumYear: 2030,
-                            onDateTimeChanged: (DateTime newdate) {
-                              date = newdate.toString();
-                              print(date[0]);
-                              print(date[1]);
-                              print(date[2]);
-                              print(date[3]);
+                            onDateTimeChanged: (myDate) {
+                              setState(() {
+                                date = myDate;
+                              });
+                              print(date);
+                              print(DateFormat.yMMMMd().format(date));
                               },
                           ),
                         );
@@ -96,22 +106,19 @@ class _PythagoreanSquareState extends State<PythagoreanSquare> {
               ),
                  ),
                ),
-              Expanded(
-                flex: 3,
-                  child: Container(
 
-              )),
-              Expanded(
-                flex: 1,
+              Expanded(child: Center(child: Text(DateFormat.yMMMMd().format(date),style: textStyle,),)),
+
+          Expanded(
                 child: Container(
-                  color: Colors.red,
-                  height: 60,
+                  color: Colors.teal,
+                  height: 80,
                   width: double.infinity,
                   child: FlatButton(
                     //color: Colors.red,
                     child: Text(
                       "РОЗРАХУВАТИ",
-                      style: TextStyle(color: Colors.white),
+                      style: textStyle,
                     ),
                     onPressed: () {
                     Navigator.push(
