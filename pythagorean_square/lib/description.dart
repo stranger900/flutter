@@ -67,25 +67,68 @@ Map<int, String> description = {
 class Brain{
   String dat = date.toString();
   int firstWorkNumber;
-  double secondWorkNumber;
-  int thitrdWorkNumber;
+  int secondWorkNumber;
+  int thirdWorkNumber;
+  int fourthWorkNumber;
+  int sum=0;
+  List<int> numbers = [];
 
-  void days(){
-    int sDay9 = int.parse(dat[9]); //15 => 5
+
+  List<int> days(){
+
     int sDay8 = int.parse(dat[8]); //15 => 1
 
-    int sMonth6 = int.parse(dat[6]); //07 => 7
-    int sMonth5 = int.parse(dat[5]); //07 => 0
+    for(int i =0; i<10; i++){
+      if (i == 4 || i==7) {
+        continue;
+      }else{
+        numbers.add(int.parse(dat[i]));
+        sum+=(int.parse(dat[i]));
+      }
+    }
 
-    int sYear3 = int.parse(dat[3]); //2019 => 9
-    int sYear2 = int.parse(dat[2]); //2019 => 1
-    int sYear1 = int.parse(dat[1]); //2019 => 0
-    int sYear0 = int.parse(dat[0]); //2019 => 2
+    firstWorkNumber = sum; // sYear0 + sYear1 + sYear2 + sYear3 + sMonth5 + sMonth6 + sDay8 + sDay9;
+    secondWorkNumber = ((firstWorkNumber.toDouble())%10 + firstWorkNumber/10).toInt();
+    thirdWorkNumber = (firstWorkNumber - sDay8*2);
+    fourthWorkNumber = ((thirdWorkNumber.toDouble())%10 + thirdWorkNumber.toDouble()/10).toInt();
 
-    firstWorkNumber = sYear0 + sYear1 + sYear2 + sYear3 + sMonth5 + sMonth6 + sDay8 + sDay9;
-    secondWorkNumber = (firstWorkNumber.toDouble())%10 + firstWorkNumber.toDouble()/10;
-    
+    numbers.add((firstWorkNumber/10).toInt());
+    numbers.add(((firstWorkNumber.toDouble())%10).toInt());
+    numbers.add(secondWorkNumber);
+    numbers.add((thirdWorkNumber/10).toInt());
+    numbers.add(((thirdWorkNumber.toDouble())%10).toInt());
+    numbers.add(fourthWorkNumber);
+
+    return numbers;
   }
 
+//  String resultOfSquare1;
+//  String resultOfSquare2;
+//  String resultOfSquare3;
+//  String resultOfSquare4;
+//  String resultOfSquare5;
+//  String resultOfSquare6;
+//  String resultOfSquare7;
+//  String resultOfSquare8;
+//  String resultOfSquare9;
+
+
+ List<String> resultOfSquare=[];
+
+  List<String> calculateNumbers(){
+    String sumNumber="";
+    int count=0;
+    for(int i=1; i<=9; i++){
+      for(int j=0; j<numbers.length; j++){
+        if(numbers[j]==i){
+          count++;
+          sumNumber=sumNumber+i.toString();
+        }
+      }
+      resultOfSquare.add(sumNumber);
+      sumNumber="";
+    }
+    return resultOfSquare;
+  }
 
 }

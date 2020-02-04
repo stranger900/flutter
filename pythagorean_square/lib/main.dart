@@ -97,7 +97,8 @@ class _PythagoreanSquareState extends State<PythagoreanSquare> {
                               });
 
                               print(date);
-
+                              print(Brain().days());
+                              print(Brain().calculateNumbers());
                               print(DateFormat.yMMMMd().format(date));
                               },
                           ),
