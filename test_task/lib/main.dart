@@ -21,19 +21,32 @@ class TestTask extends StatefulWidget {
 
 class _TestTaskState extends State<TestTask> {
 
-
-
-  List<Color> colosrsOfScreen = [
-    Colors.teal, Colors.white, Colors.yellow,
-    Colors.red, Colors.blue, Colors.amber,
+  List<Color> colorsOfScreen = [
+    Colors.white, Colors.yellow,
+    Colors.red,  Colors.amber,
     Colors.greenAccent, Colors.orange, Colors.cyanAccent,
-    Colors.cyan, Colors.green, Colors.grey
+    Colors.cyan, Colors.green, Colors.grey,
+    Colors.teal, Colors.blue,
   ];
 
-  Color changeColor(){
+  int selectedRandomNumber = 1;
 
-    int selectedColor = Random().nextInt(colosrsOfScreen.length);
-    return colosrsOfScreen[selectedColor];
+  Color setColor(){
+    if( selectedRandomNumber >= 7 ){
+      return Colors.white;
+    }else{
+      return Colors.black;
+    }
+  }
+
+  String selectedFont(){
+    int fontNumber = Random().nextInt(3)+1;
+    return 'Font$fontNumber';
+  }
+
+  Color changeColor(){
+    selectedRandomNumber = Random().nextInt(colorsOfScreen.length);
+    return colorsOfScreen[selectedRandomNumber];
   }
 
   @override
@@ -45,11 +58,9 @@ class _TestTaskState extends State<TestTask> {
         color: changeColor(),
         onPressed: (){
           setState(() {
-            //changeColor();
           });
-
         },
-        child: Text('Hey there',style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+        child: Text('Hey there',style: TextStyle(color: setColor(),fontSize: 10.0*selectedRandomNumber+6,fontFamily: selectedFont(), ),),
       ),
     );
   }
