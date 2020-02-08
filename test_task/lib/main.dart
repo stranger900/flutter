@@ -60,7 +60,7 @@ class _TestTaskState extends State<TestTask> {
           setState(() {
           });
         },
-        child: Text('Hey there',style: TextStyle(color: setColor(),fontSize: 10.0*selectedRandomNumber+6,fontFamily: selectedFont(), ),),
+        child: Center(child: Text('Hey there',style: TextStyle(color: setColor(),fontSize: 10.0*selectedRandomNumber+6,fontFamily: selectedFont(), ),)),
       ),
     );
   }
