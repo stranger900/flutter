@@ -5,11 +5,9 @@ import './network.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(
       ),
@@ -66,7 +64,6 @@ class _AmazingPictureState extends State<AmazingPicture> {
                         onTap:(){
                           Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(snapshot.data[index])));
                         },
-
                       ),
                     );
                   },
@@ -79,22 +76,3 @@ class _AmazingPictureState extends State<AmazingPicture> {
   }
 }
 
-
-//ListView(children: <Widget>[
-//Container(
-//color: Colors.cyan,
-//child: ListTile(
-//leading: Icon(Icons.smartphone),
-//title: Text('aaa'),
-//subtitle: Text('bbb'),
-//onTap: (){
-//setState(() {
-////PhotosData().getPhotosData();
-//print('on tap');
-//});
-//Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
-//},
-//
-//),
-//),
-//],),
