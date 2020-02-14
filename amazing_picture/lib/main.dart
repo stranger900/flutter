@@ -58,8 +58,8 @@ class _AmazingPictureState extends State<AmazingPicture> {
                           backgroundImage: NetworkImage(snapshot.data[index].thumb),
                         ),
 
-                        title: Text(snapshot.data[index].name),
-                        subtitle: Text(snapshot.data[index].location),
+                        title: Text(snapshot.data[index].name,style: TextStyle(fontSize: 20.0),),
+                        subtitle: Text(snapshot.data[index].location, style: TextStyle(fontSize: 17.0),),
                         trailing: Icon(Icons.keyboard_arrow_right),
                         onTap:(){
                           Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(snapshot.data[index])));
