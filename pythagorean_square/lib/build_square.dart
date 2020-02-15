@@ -11,6 +11,11 @@ class BuildSquare extends StatelessWidget {
       appBar: AppBar(title: Text('Pythagorean Square'),),
       body: Column(
         children: <Widget>[
+          SizedBox(height: 20.0,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[Text('Розрахунок',style: TextStyle(fontSize: 25.0),)],),
+          SizedBox(height: 20.0,),
           Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               MyConteiners(resultSquare[0]),
@@ -35,7 +40,15 @@ class BuildSquare extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20.0,),
-
+          Text('Натисніть на квадрат щоб почитати детальніше'),
+//          Text('цифр немає - це означає, що якість, за який вони відповідають, відсутній у людини'),
+//
+//          Text('одна цифра - якість дуже слабо розвинене, що говорить про необхідність розвивати його і вдосконалювати'),
+//          Text('дві цифри - вважається, що якість дано в нормі, тобто воно розвинене, але не домінує над іншими, при бажанні можна зайнятися його вдосконаленням;'),
+//          Text('три цифри - це особливий знак, людина включає це якість екстрено, випадково, раптом;'),
+//          Text('чотири цифри - якість розвинене сильно;'),
+//          Text('п\'ять цифр - якість розвинене максимально сильно - межа!'),
+//          Text('шість і більше цифр - наступає перевантаження якості, коли воно починає змінюватися на протилежне, тобто з сильного перетворюється в слабке.'),
         ],
       ),
     );
