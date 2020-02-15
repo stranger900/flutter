@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:pythagorean_square/constants.dart';
-import 'package:pythagorean_square/description.dart';
+import 'package:pythagorean_square/build_square.dart';
+import './brain.dart';
 
 void main() => runApp(MyApp());
 
@@ -126,7 +127,7 @@ class _PythagoreanSquareState extends State<PythagoreanSquare> {
                     onPressed: () {
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Description()),
+                    MaterialPageRoute(builder: (context) => BuildSquare()),
                     );}
                   ),
                 ),

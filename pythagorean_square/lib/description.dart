@@ -1,134 +1,99 @@
 import 'package:flutter/material.dart';
-import 'package:pythagorean_square/constants.dart';
+import './brain.dart';
 
 class Description extends StatelessWidget {
+  //List<int> resultSquare = Brain().calculateNumbers();
+  int value;
+  Description(this.value);
+
+  String descriptionOfMap (int value){
+    return description[value];
+  }
+
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title: Text('Pythagorean Square'),),
-      body: Column(
-        children: <Widget>[
-          Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              MyConteiner('1').conteiners(),
-              MyConteiner('2').conteiners(),
-              MyConteiner('3').conteiners(),
-          ],
-          ),
-          SizedBox(height: 20,),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              MyConteiner('1').conteiners(),
-              MyConteiner('2').conteiners(),
-              MyConteiner('3').conteiners(),
-            ],
-          ),
-          SizedBox(height: 20,),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              MyConteiner('1').conteiners(),
-              MyConteiner('2').conteiners(),
-              MyConteiner('3').conteiners(),
-            ],
-          ),
-        ],
-      ),
+        appBar: AppBar(title: Text('Pythagorean Square'),),
+    body: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Center(child: Text(value.toString(), style: TextStyle(fontSize: 20.0),)),
+      Center(child: Text(descriptionOfMap(value),style: TextStyle(fontSize: 20.0))),
+
+    ],
+    ),
     );
   }
 }
-
-class MyConteiner {
-  String numberConteiner;
-  MyConteiner(this.numberConteiner);
-  Widget conteiners() {
-    return Container(
-      child: Center(child: Text(numberConteiner)),
-      decoration: BoxDecoration(border: Border.all(color: Colors.teal)),
-      height: 100,
-      width: 100,
-    );
-
-  }
-}
-
 
 
 Map<int, String> description = {
   //Квадрат 1. Характер
+
   1: 'егоїст',
   11: 'людина егоїстичний, але іноді може подумати про інших',
   111: 'людина з позитивним стійким характером',
   1111: 'характер дуже вольовий і сильний',
+  11111 : 'самодур і диктатор',
+  111111 : 'жорстока людина, але для близьких піде на все. Вкрай неприємна в спілкуванні. Такі люди, на щастя, зустрічаються дуже рідко',
+  //Квадрат 2. Біоенергія
+  0: 'Двійок немає.Біополе відсутня. Канал відкритий для активного поглинання енергії. Таким людям подобаються старі речі (колекціонери). Вони непогано ставляться до оточуючих, але при цьому намагаються поживитися за рахунок інших, «поглинаючи» їх біополе',
+  2 : 'біоенергії вистачає для життя, але в даний момент її обмаль, тому треба займатися спортом. Ці люди надчутливі до атмосферних перепадів',
+  22 : 'біоенергії достатньо, така людина здатна лікувати інших людей',
+  222 : 'хороший экстросенс',
+  2222 : 'цих людей дуже любить протилежну стать. Однак якщо додаються три шістки (666), треба бути обережнішим!',
+  22222 : '',
+  //Квадрат 3. Організованість і здібності до наук
+  0 : 'Дуже акуратний і пунктуальна людина, який виділяється серед навколишніх культурної промовою і вихованістю',
+  3 : 'у таких людей все залежить від настрою. Вони не люблять безлад, але прибирання проводять знову-таки в залежності від настрою(хочу - роблю. хочу — ні)',
+  33 : 'хороші здібності до точних наук(математики, фізики, хімії)',
+  333 : 'здатність до наук. Акуратні до занудства',
+  3333 : 'з цих людей виходять хороші вчені. Відмінні риси — педантизм, акуратність',
+  33333 : '',
+  //Квадрат 4. Здоров'я
+  0 : 'У цієї людини проблеми зі здоров\'ям',
+  4 : 'здоров\'я нормальне, хвороби починаються в похилому віці',
+  44 : 'дуже здорова людина, що володіє високою опірністю хворобам, живим темпераментом',
+  444 : 'те ж саме, тільки яскравіше виражено',
+  4444 : '',
+  44444 : '',
+  //Квадрат 5. Інтуїція
+  0 : '',
+  5 : '',
+  55 : '',
+  555 : '',
+  5555 : '',
+  55555 : '',
+  //Квадрат 6. Заземленість
+  0 : '',
+  6	: '',
+  66	: '',
+  666	: '',
+  6666	: '',
+  66666	: '',
+  //Квадрат 7. Талант
+  0	:	'	'	,
+  7	:	'	'	,
+  77	:	'	'	,
+  777	:	'	'	,
+  7777	:	'	'	,
+  77777	:	'	'	,
+  //Квадрат 8. Відповідальність
+  0	:	'	'	,
+  8	:	'	'	,
+  88	:	'	'	,
+  888	:	'	'	,
+  8888	:	'	'	,
+  88888	:	'	'	,
+  //Квадрат 9. Розум
+  0	:	'	'	,
+  9	:	'	'	,
+  99	:	'	'	,
+  999	:	'	'	,
+  9999	:	'	'	,
+  99999	:	'	'	,
+
 
 };
-
-class Brain{
-  String dat = date.toString();
-  int firstWorkNumber;
-  int secondWorkNumber;
-  int thirdWorkNumber;
-  int fourthWorkNumber;
-  int sum=0;
-  List<int> numbers = [];
-
-
-  List<int> days(){
-
-    int sDay8 = int.parse(dat[8]); //15 => 1
-
-    for(int i =0; i<10; i++){
-      if (i == 4 || i==7) {
-        continue;
-      }else{
-        numbers.add(int.parse(dat[i]));
-        sum+=(int.parse(dat[i]));
-      }
-    }
-
-    firstWorkNumber = sum; // sYear0 + sYear1 + sYear2 + sYear3 + sMonth5 + sMonth6 + sDay8 + sDay9;
-    secondWorkNumber = ((firstWorkNumber.toDouble())%10 + firstWorkNumber/10).toInt();
-    thirdWorkNumber = (firstWorkNumber - sDay8*2);
-    fourthWorkNumber = ((thirdWorkNumber.toDouble())%10 + thirdWorkNumber.toDouble()/10).toInt();
-
-    numbers.add((firstWorkNumber/10).toInt());
-    numbers.add(((firstWorkNumber.toDouble())%10).toInt());
-    numbers.add(secondWorkNumber);
-    numbers.add((thirdWorkNumber/10).toInt());
-    numbers.add(((thirdWorkNumber.toDouble())%10).toInt());
-    numbers.add(fourthWorkNumber);
-
-    return numbers;
-  }
-
-//  String resultOfSquare1;
-//  String resultOfSquare2;
-//  String resultOfSquare3;
-//  String resultOfSquare4;
-//  String resultOfSquare5;
-//  String resultOfSquare6;
-//  String resultOfSquare7;
-//  String resultOfSquare8;
-//  String resultOfSquare9;
-
-
- List<String> resultOfSquare=[];
-
-  List<String> calculateNumbers(){
-    String sumNumber="";
-    int count=0;
-    for(int i=1; i<=9; i++){
-      for(int j=0; j<numbers.length; j++){
-        if(numbers[j]==i){
-          count++;
-          sumNumber=sumNumber+i.toString();
-        }
-      }
-      resultOfSquare.add(sumNumber);
-      sumNumber="";
-    }
-    return resultOfSquare;
-  }
-
-}
