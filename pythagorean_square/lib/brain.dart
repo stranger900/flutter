@@ -12,7 +12,7 @@ class Brain{
 
   List<int> days(){
 
-    int sDay8 = int.parse(dat[8]); //15 => 1
+    int sDay8 = int.parse(dat[8]); //15.02.2020 => 1
 
     for(int i =0; i<10; i++){
       if (i == 4 || i==7) {
@@ -38,38 +38,20 @@ class Brain{
     return numbers;//work numbers
   }
 
-//  String resultOfSquare1;
-//  String resultOfSquare2;
-//  String resultOfSquare3;
-//  String resultOfSquare4;
-//  String resultOfSquare5;
-//  String resultOfSquare6;
-//  String resultOfSquare7;
-//  String resultOfSquare8;
-//  String resultOfSquare9;
-
-
   List<int> resultOfSquare=[];
 
   List<int> calculateNumbers(){
     var numbers = Brain().days();
     int sumNumber=0;
-    //int count=0;
     for(int i=1; i<=9; i++){
       for(int j=0; j<numbers.length; j++){
         if(numbers[j]==i){
-
-          //print('count = $count');
           sumNumber=sumNumber*10+i;
         }
-        //count++;
       }
-      print('sumNumber = $sumNumber');
-      print(numbers);
       resultOfSquare.add(sumNumber);
       sumNumber=0;
     }
-    print(resultOfSquare);
     return resultOfSquare;
   }
 

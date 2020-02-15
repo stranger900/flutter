@@ -21,18 +21,3 @@ class MyConteiners extends StatelessWidget {
     );
   }
 }
-
-
-//class MyConteiners {
-//  String numberConteiner;
-//  MyConteiners(this.numberConteiner);
-//  Widget conteiners() {
-//    return Container(
-//      child: Center(child: Text(numberConteiner)),
-//      decoration: BoxDecoration(border: Border.all(color: Colors.teal)),
-//      height: 100,
-//      width: 100,
-//    );
-//
-//  }
-//}
