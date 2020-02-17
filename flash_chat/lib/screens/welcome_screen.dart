@@ -20,6 +20,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
       duration: Duration(seconds: 1),
       vsync: this,
     );
+    controller.forward();
+    controller.addListener((){
+      print(controller.value);
+    });
   }
 
   @override
