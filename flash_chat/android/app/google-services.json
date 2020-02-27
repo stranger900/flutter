@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "263803789822",
+    "firebase_url": "https://chat-test-c6e31.firebaseio.com",
+    "project_id": "chat-test-c6e31",
+    "storage_bucket": "chat-test-c6e31.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263803789822:android:b5251117d9965bc67c60af",
+        "android_client_info": {
+          "package_name": "io.github.stranger900.dash_chat_example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263803789822-0osdv0sk6ottd1qebhnlvm5ikph4p5g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmB1u8iYuVfFcu_1pce5ZCoLEvetPGhKg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263803789822-0osdv0sk6ottd1qebhnlvm5ikph4p5g1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

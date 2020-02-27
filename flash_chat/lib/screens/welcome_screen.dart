@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flash_chat/screens/login_screen.dart';
 import 'package:flash_chat/screens/registration_screen.dart';
 import 'package:flutter/src/animation/animation_controller.dart';
+import '../rounded_button.dart';
+
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -25,14 +27,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
       setState(() {
 
       });
-      print(controller.value);
+      //print(controller.value);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red.withOpacity(controller.value),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -44,12 +46,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                 Hero(
                   tag: 'logo',
                   child: Container(
-                    child: Image.asset('images/logo.png'),
-                    height: 60.0,
+                    child: Image.asset('images/logo.jpg'),
+                    height: 35.0,
                   ),
                 ),
                 Text(
-                  'Flash Chat',
+                  'Chat',
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
@@ -60,47 +62,43 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
             SizedBox(
               height: 48.0,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    //Go to login screen.
-                    Navigator.pushNamed(context, LoginScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Log In',
-                  ),
-                ),
-              ),
+            RoundedButton(
+              onPressed: () {
+                //Go to login screen.
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
+              text: 'Log In',
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    //Go to registration screen.
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Register',
-                  ),
-                ),
-              ),
+            RoundedButton(
+              onPressed: () {
+                //Go to registration screen.
+                Navigator.pushNamed(context, RegistrationScreen.id);
+              },
+              text: 'Register',
             ),
+//            Padding(
+//              padding: EdgeInsets.symmetric(vertical: 16.0),
+//              child: Material(
+//                color: Colors.blueAccent,
+//                borderRadius: BorderRadius.circular(30.0),
+//                elevation: 5.0,
+//                child: MaterialButton(
+//                  onPressed: () {
+//                    //Go to registration screen.
+//                    Navigator.pushNamed(context, RegistrationScreen.id);
+//                  },
+//                  minWidth: 200.0,
+//                  height: 42.0,
+//                  child: Text(
+//                    'Register',
+//                  ),
+//                ),
+//              ),
+//            ),
           ],
         ),
       ),
     );
   }
 }
+
