@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1056579012667",
+    "firebase_url": "https://dash-chat-804d0.firebaseio.com",
+    "project_id": "dash-chat-804d0",
+    "storage_bucket": "dash-chat-804d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056579012667:android:5adc4956bce58b3969741e",
+        "android_client_info": {
+          "package_name": "io.github.stranger900.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056579012667-nid7bf54uqj274u2j6c2ilmq9krs1nil.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLMT39Tx3jKMlNgEsYkfH-p89NLhtv5Hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056579012667-nid7bf54uqj274u2j6c2ilmq9krs1nil.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
