@@ -40,22 +40,41 @@ class TasksScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
               ),
-              child: ListView(
-                children: <Widget>[
-                  ListTile(
-                    title: Text('Task'),
-                    trailing: Checkbox(value: false, ),
-                  ),
-                ],
-              ),
+              child: TasksList(),
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class TasksList extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: <Widget>[
+        TaskTile(),
+        TaskTile(),
+        TaskTile(),
+      ],
+    );
+  }
+}
+
+class TaskTile extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text('Task'),
+      trailing: Checkbox(value: false, ),
     );
   }
 }
