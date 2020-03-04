@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../widget/TaskList.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
@@ -9,6 +10,9 @@ class TasksScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
+        onPressed: () {
+
+        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,27 +58,4 @@ class TasksScreen extends StatelessWidget {
   }
 }
 
-class TasksList extends StatelessWidget {
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        TaskTile(),
-        TaskTile(),
-        TaskTile(),
-      ],
-    );
-  }
-}
-
-class TaskTile extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text('Task'),
-      trailing: Checkbox(value: false, ),
-    );
-  }
-}
