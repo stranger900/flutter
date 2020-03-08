@@ -5,7 +5,11 @@ import '../widget/TaskList.dart';
 class TasksScreen extends StatelessWidget {
 
   Widget buildButtomSheet(BuildContext context){
-    return Container();
+    return Container(
+      child: Center(
+        child: Text('Some text'),
+      ),
+    );
   }
 
   @override
