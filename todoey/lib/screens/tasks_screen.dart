@@ -4,13 +4,8 @@ import '../widget/TaskList.dart';
 
 class TasksScreen extends StatelessWidget {
 
-  Widget buildButtomSheet(BuildContext context){
-    return Container(
-      child: Center(
-        child: Text('Some text'),
-      ),
-    );
-  }
+  //Widget buildButtomSheet(BuildContext context) => Container();
+
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +15,7 @@ class TasksScreen extends StatelessWidget {
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
         onPressed: () {
-          showModalBottomSheet(context: context, builder: buildButtomSheet);
+          showModalBottomSheet(context: context, builder: (context)  => Container());
         },
       ),
       body: Column(
@@ -37,7 +32,7 @@ class TasksScreen extends StatelessWidget {
                   radius: 30,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Text(
                   'Todoey',
