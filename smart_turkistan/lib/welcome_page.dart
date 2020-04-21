@@ -18,7 +18,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/background.jpg"),
+            image: AssetImage("assets/image/background.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -44,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       FlatButton(onPressed: (){
-                        Navigator.push(context,  MaterialPageRoute(builder: (context) => Dialog()));
+                        //Navigator.push(context,  MaterialPageRoute(builder: (context) => Dialog()));
                       }, child: Icon(Icons.phone, color: Colors.white)),
                       FlatButton(onPressed: (){}, child: Icon(Icons.home, color: Colors.white)),
                       FlatButton(onPressed: (){}, child: Icon(Icons.camera_alt, color: Colors.white)),
@@ -64,7 +64,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 children: <Widget>[
                   IconsMainPage(
                     selectedOnTap:  () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Dialog()));
+                      //Navigator.push(context, MaterialPageRoute(builder: (context) => Dialog()));
                     },
                     selectedText:'Открытый диалог',
                     selectedIcon: Icon(Icons.chat, color: Colors.white,size: 35,),
@@ -94,7 +94,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,//AssetImage("assets/monitoring_tsen.png")
                 children: <Widget>[
-                  IconsMainPage(selectedOnTap:  () {}, selectedText:'Такси', selectedIcon: Icon( SmartTurklistan.taxi_sign__1_, color: Colors.white, size: 20,),),
+                  IconsMainPage(selectedOnTap:  () {}, selectedText:'Такси', selectedIcon: Icon( SmartTurklistan.taxi_sign, color: Colors.white, size: 20,),),
                   IconsMainPage(selectedOnTap: () {}, selectedText:'Базар', selectedIcon: Icon(SmartTurklistan.shopping_bag, color: Colors.white,size: 35,),),
                   IconsMainPage(selectedOnTap: () {}, selectedText:'3Д-тур', selectedIcon: Icon(SmartTurklistan.ddd, color: Colors.white,size: 35,),),
                 ],
@@ -108,7 +108,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,//AssetImage("assets/monitoring_tsen.png")
                 children: <Widget>[
-                  IconsMainPage(selectedOnTap:  () {}, selectedText:'Активный гражданин', selectedIcon: Icon( Icons.record_voice_over, color: Colors.white, size: 35,),),
+                  IconsMainPage(selectedOnTap:  () {}, selectedText:'Активный гражданин', selectedIcon: Icon( SmartTurklistan.voice_command, color: Colors.white, size: 35,),),
                   IconsMainPage(selectedOnTap: () {}, selectedText:'Очередь на жилье', selectedIcon: Icon(SmartTurklistan.home, color: Colors.white,size: 35,),),
                   IconsMainPage(selectedOnTap: () {}, selectedText:'Участковые', selectedIcon: Icon(SmartTurklistan.police, color: Colors.white,size: 35,),),
                 ],

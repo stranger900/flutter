@@ -21,7 +21,6 @@ class SmartTurklistan {
   static const _kFontFam = 'SmartTurklistan';
   static const _kFontPkg = null;
 
-  static const IconData taxi_sign__1_ = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData tenge = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData shopping_bag = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData police = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
@@ -30,4 +29,6 @@ class SmartTurklistan {
   static const IconData monitoring_tsen = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData home = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData ddd = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData voice_command = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData taxi_sign = IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

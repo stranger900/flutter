@@ -59,7 +59,7 @@ class _MainPageState extends State<MainPage> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/st.jpg"),
+            image: AssetImage("assets/image/st.jpg"),
             fit: BoxFit.cover,
           ),
         ),
